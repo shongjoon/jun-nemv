@@ -34,3 +34,32 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+const mongoose = require('mongoose')
+const User = require('./models/users')
+
+mongoose.connect('mongodb://localhost:27017/jun-enmv', { useNewUrlParser: true }, (err) => {
+  if(err) return console.error(err)
+  console.log('mongoose connected!')
+  // User.deleteMany()
+  //     .then(r => console.log(r))
+  //     .catch(e => console.error(e))
+  // User.create({name: '하하'})
+  //   .then(r => console.log(r))
+  //   .catch(e => console.error(e))
+  // User.find()
+  //     .then(r => console.log(r))
+  //     .catch(e => console.error(e))
+  // User.updateOne({_id:'5c87ab8087d79335e8b4002a'}, {$set: {age: 34}})
+  //       .then(r => {
+  //         console.log(r)
+  //         console.log('updated')
+  //         return User.find()
+  //       })
+  //       .then(r => console.log(r))
+  //       .catch(e => console.error(e))
+  // User.deleteOne({ name: '하하'})
+  //           .then(r => console.log(r))
+  //           .catch(e => console.error(e))
+})
+
